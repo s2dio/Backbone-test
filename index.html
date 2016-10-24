@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Example Backbone App</title>
+    <meta charset="utf-8" />
+    <!-- load the bootstrap stylesheet -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/backgrid.js/0.3.7/backgrid.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="http://backbone-paginator.github.io/backbone.paginator/examples/css/extensions/paginator/backgrid-paginator.css" media="all" rel="stylesheet" type="text/css" />
+    <style>
+        .error{
+            position: absolute;
+            right: 15px;
+            font-size: 9px;
+            color: #a94442;
+        }
+        </style>
+
+</head>
+<body>
+
+
+<div id="main" style="margin-top: 60px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 grid">
+                <div id="grid"></div>
+                <div id="paginator"></div>
+            </div>
+            <div id="detail_view"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- load our scripts -->
+<script type="text/template" id="detail">
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="well well-sm">
+                <form class="form-horizontal" id="user">
+                    <fieldset>
+                        <legend class="text-center"><%= name %></legend>
+
+                        <!-- Name input-->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="name">Name</label>
+                            <div class="col-md-9">
+                                <input id="name" name="name" type="text" placeholder="Your name" value="<%= name %>"  class="form-control"  />
+                            </div>
+                        </div>
+
+
+                        <!-- username input-->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="name">Username</label>
+                            <div class="col-md-9">
+                                <input id="username" name="username" type="text" placeholder="Your username" value="<%= username %>" class="form-control">
+                            </div>
+                        </div>
+
+
+                        <!-- Email input-->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="email"  pattern="[A-Za-z]">Your E-mail</label>
+                            <div class="col-md-9">
+                                <input id="email" name="email" type="text" placeholder="Your email" value="<%= email %>"  class="form-control"/>
+                            </div>
+                        </div>
+
+
+
+                        <!-- phone input-->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="email">Your phone</label>
+                            <div class="col-md-9">
+                                <input id="phone" name="phone" type="text" placeholder="Your phone" value="<%= phone %>"  class="form-control">
+                            </div>
+                        </div>
+
+
+                        <!-- website input-->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="email">Your website</label>
+                            <div class="col-md-9">
+                                <input id="website" name="website" type="text" placeholder="Your website" value="<%= website %>"  class="form-control">
+                            </div>
+                        </div>
+
+
+                        <!-- adress input-->
+                        <legend class="text-center">Your adress</legend>
+
+                        <div class="form-group">
+
+                            <label class="col-md-3 control-label" for="email">Your adress</label>
+                            <div class="col-md-9">
+                                <input id="adress" name="street" type="text" placeholder="Your phone" value="<%= address.street %>"  class="form-control">
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label class="col-md-3 control-label" for="email">Your suite</label>
+                            <div class="col-md-9">
+                                <input id="suite" name="street" type="text" placeholder="Your suite" value="<%= address.suite %>"  class="form-control">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="col-md-3 control-label" for="email">Your city</label>
+                            <div class="col-md-9">
+                                <input id="city" name="city" type="text" placeholder="Your city" value="<%= address.city %>"  class="form-control">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="col-md-3 control-label" for="email">Your zip </label>
+                            <div class="col-md-9">
+                                <input id="zipcode" name="zipcode" type="text" placeholder="Your zipcode" value="<%= address.zipcode %>"  class="form-control">
+                            </div>
+
+                        </div>
+
+
+                        <!-- Form actions -->
+                        <div class="form-group">
+                            <div class="col-md-12 text-right">
+                                <button id="cancel" class="btn btn-primary btn-lg">Cancel</button>
+                                <button id="save"  class="btn btn-primary btn-lg">Save</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</script>
+
+
+
+<!-- load the libraries we need -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.paginator/2.0.5/backbone.paginator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/backgrid.js/0.3.7/backgrid.js"></script>
+<script src="js/backgrid-paginator.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
